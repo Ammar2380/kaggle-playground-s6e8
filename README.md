@@ -93,47 +93,31 @@ Depending on the findings:
 
 ### 4. Baseline Model
 
-A simple baseline model will be established first to create a reference point for future experiments.
-
-The baseline is important because every later improvement should be compared against it.
+A simple baseline model was established first to create a reference point for later experiments, before moving on to LightGBM.
 
 ### 5. Feature Engineering
 
-Potential features will be created based on domain understanding and analysis rather than arbitrary transformations.
-
-Each meaningful feature-engineering experiment will be documented.
+Features were created based on domain understanding and analysis of the behavioral/demographic data rather than arbitrary transformations.
 
 ### 6. Model Experiments
 
-Different appropriate tabular ML algorithms will be evaluated.
-
-For every major experiment, I will record:
-
-* Model
-* Features used
-* Preprocessing
-* Validation strategy
-* Validation score
-* Kaggle score
-* Observations
+Multiple tabular ML algorithms were evaluated, with LightGBM producing the best submission (see `submission_lgbm2.csv`).
 
 ### 7. Kaggle Submissions
 
-Predictions will be generated using the test dataset and submitted to Kaggle.
-
-Submission results will be tracked to understand whether improvements in local validation translate into improvements on the leaderboard.
+Predictions were generated using the test dataset and submitted to Kaggle. Submission results were tracked across iterations (`submission.csv` → `submission_lgbm.csv` → `submission_lgbm2.csv`) to see whether local improvements translated into leaderboard improvements.
 
 ---
 
 ## Experiment Tracking
 
-| Experiment   | Model | Validation Score | Kaggle Score | Notes             |
-| ------------ | ----- | ---------------: | -----------: | ----------------- |
-| Baseline     | TBD   |              TBD |          TBD | Initial reference |
-| Experiment 1 | TBD   |              TBD |          TBD | TBD               |
-| Experiment 2 | TBD   |              TBD |          TBD | TBD               |
+| Experiment   | Model     | Validation Score | Kaggle Score | Notes                              |
+| ------------ | --------- | ----------------: | -----------: | ----------------------------------- |
+| Baseline     | —         |                — |            — | See `submission.csv`               |
+| Experiment 1 | LightGBM  |                — |            — | See `submission_lgbm.csv`          |
+| Experiment 2 | LightGBM  |                — |       0.96457 | Final submission, `submission_lgbm2.csv` |
 
-This table will be updated throughout the competition.
+*Validation scores weren't logged separately during the competition — noted here for future competitions.*
 
 ---
 
@@ -142,29 +126,16 @@ This table will be updated throughout the competition.
 ```text
 kaggle-playground-s6e8/
 │
-├── data/
-│   └── README.md
-│
-├── notebooks/
-│   ├── 01_eda.ipynb
-│   ├── 02_baseline.ipynb
-│   ├── 03_feature_engineering.ipynb
-│   └── 04_modeling.ipynb
-│
-├── src/
-│   ├── preprocessing.py
-│   ├── features.py
-│   └── train.py
-│
-├── submissions/
-│   └── README.md
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── main.ipynb                 # Main notebook: EDA, preprocessing, modeling
+├── win_pipeline_fixed.py      # Final training/inference pipeline
+├── train.csv                  # Training data
+├── test.csv                   # Test data
+├── sample_submission.csv      # Kaggle's submission format
+├── submission.csv             # First (baseline) submission
+├── submission_lgbm.csv        # LightGBM submission (v1)
+├── submission_lgbm2.csv       # Final, best-scoring LightGBM submission
+└── README.md
 ```
-
-The structure may evolve as the project becomes more advanced.
 
 ---
 
@@ -175,16 +146,17 @@ The structure may evolve as the project becomes more advanced.
 * pandas
 * Matplotlib
 * scikit-learn
+* LightGBM
 * Jupyter Notebook
 * Kaggle
 
-Additional libraries may be added when justified by the experiments.
+Additional libraries may be added when justified by future experiments.
 
 ---
 
 ## What I Am Learning
 
-This competition is helping me practice:
+This competition helped me practice:
 
 * Real-world tabular data analysis
 * Exploratory Data Analysis
@@ -205,7 +177,7 @@ This competition is helping me practice:
 
 ## Competition Rules
 
-All experiments and submissions are conducted according to the official competition rules.
+All experiments and submissions were conducted according to the official competition rules.
 
 Important restrictions include:
 
@@ -223,21 +195,19 @@ See the official competition rules for the complete requirements.
 
 ## Results
 
-**Final Kaggle Score:** TBD
-**Final Rank:** TBD
-**Best Submission:** TBD
-
-This section will be updated when the competition is completed.
+**Final Kaggle Score:** 0.96457
+**Final Rank:** 2192 / 3531 teams
+**Best Submission:** LightGBM (`submission_lgbm2.csv`)
 
 ---
 
 ## Final Reflection
 
-This is my first Kaggle competition.
+This was my first Kaggle competition.
 
-The purpose of this project is to move beyond simply studying machine learning concepts and practice applying them to an actual competitive data science problem.
+The purpose of this project was to move beyond simply studying machine learning concepts and practice applying them to an actual competitive data science problem.
 
-Rather than focusing only on the final leaderboard position, I am documenting the reasoning behind my experiments, mistakes, improvements, and lessons learned throughout the competition.
+Rather than focusing only on the final leaderboard position, I documented the reasoning behind my experiments, mistakes, improvements, and lessons learned throughout the competition — placing in the top ~62% on a first attempt, with no prior competitive ML experience.
 
 **The objective is to become better at solving ML problems, one competition at a time.**
 
