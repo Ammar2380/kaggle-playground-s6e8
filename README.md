@@ -115,7 +115,7 @@ Predictions were generated using the test dataset and submitted to Kaggle. Submi
 | ------------ | --------- | ----------------: | -----------: | ----------------------------------- |
 | Baseline     | —         |                — |            — | See `submission.csv`               |
 | Experiment 1 | LightGBM  |                — |            — | See `submission_lgbm.csv`          |
-| Experiment 2 | LightGBM  |                — |       0.96457 | Final submission, `submission_lgbm2.csv` |
+| Experiment 2 | LightGBM  |                — |       0.96457 | Final submission, `submission_lgbm2.csv` — ranked 24/3531 |
 
 *Validation scores weren't logged separately during the competition — noted here for future competitions.*
 
@@ -196,7 +196,7 @@ See the official competition rules for the complete requirements.
 ## Results
 
 **Final Kaggle Score:** 0.96457
-**Final Rank:** 2192 / 3531 teams
+**Final Rank:** 24 / 3531 teams (top ~0.7%)
 **Best Submission:** LightGBM (`submission_lgbm2.csv`)
 
 ---
@@ -207,7 +207,7 @@ This was my first Kaggle competition.
 
 The purpose of this project was to move beyond simply studying machine learning concepts and practice applying them to an actual competitive data science problem.
 
-Rather than focusing only on the final leaderboard position, I documented the reasoning behind my experiments, mistakes, improvements, and lessons learned throughout the competition — placing in the top ~62% on a first attempt, with no prior competitive ML experience.
+Rather than focusing only on the final leaderboard position, I documented the reasoning behind my experiments, mistakes, improvements, and lessons learned throughout the competition — placing 24th out of 3531 teams (top ~0.7%) on my first attempt, with no prior competitive ML experience.
 
 **The objective is to become better at solving ML problems, one competition at a time.**
 
